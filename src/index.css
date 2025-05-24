@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 220 20% 98%; /* promptcare-subtle-bg */
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,8 +14,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 206 70% 48%; /* A nice blue */
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -30,28 +31,27 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 206 70% 48%; /* primary color for rings */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly larger radius for a softer look */
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* PromptCare Palette */
+    --promptcare-primary: 206 70% 48%; /* hsl(206, 70%, 48%) - Calm Blue */
+    --promptcare-primary-foreground: 0 0% 100%;
+    --promptcare-urgent: 0 72% 51%;    /* hsl(0, 72%, 51%) - Bright Red for Emergency */
+    --promptcare-urgent-foreground: 0 0% 100%;
+    --promptcare-soon: 30 90% 55%;   /* hsl(30, 90%, 55%) - Clear Orange for Soon */
+    --promptcare-soon-foreground: 0 0% 0%; /* Black text for better contrast on orange */
+    --promptcare-monitor: 130 60% 45%; /* hsl(130, 60%, 45%) - Reassuring Green */
+    --promptcare-monitor-foreground: 0 0% 100%;
+    --promptcare-surface: 0 0% 100%; /* hsl(0, 0%, 100%) - White for cards */
+    --promptcare-subtle-bg: 220 20% 98%; /* hsl(220, 20%, 98%) - Very light grey/blue for page bg */
+    
+    /* ... keep existing sidebar variables ... */
   }
 
   .dark {
+    /* Basic dark theme mapping, can be refined later */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -61,32 +61,29 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --primary: 206 70% 58%; /* Lighter blue for dark mode */
+    --primary-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ring: 206 70% 58%;
+
+    /* PromptCare Dark Palette (example) */
+    --promptcare-primary: 206 70% 58%;
+    --promptcare-primary-foreground: 0 0% 0%;
+    --promptcare-urgent: 0 72% 61%;
+    --promptcare-urgent-foreground: 0 0% 100%;
+    --promptcare-soon: 30 90% 65%;
+    --promptcare-soon-foreground: 0 0% 0%;
+    --promptcare-monitor: 130 60% 55%;
+    --promptcare-monitor-foreground: 0 0% 0%;
+    --promptcare-surface: 220 15% 15%; /* Darker surface for cards */
+    --promptcare-subtle-bg: 220 20% 10%; /* Darker page bg */
+
+    /* ... keep existing sidebar dark variables ... */
   }
 }
 
@@ -94,8 +91,8 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground;
+    @apply bg-promptcare-subtle-bg text-foreground font-sans antialiased;
   }
 }
+
