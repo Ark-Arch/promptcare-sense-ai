@@ -4,7 +4,7 @@ import type { Clinic } from '@/types/promptcare';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import Spinner from './Spinner';
-import { MapPin, ExternalLink } from 'lucide-react';
+import { MapPin, ExternalLink, RefreshCw } from 'lucide-react'; // Added RefreshCw here
 
 const NearbyClinics = () => {
   const [clinics, setClinics] = useState<Clinic[] | null>(null);
@@ -103,3 +103,4 @@ const NearbyClinics = () => {
 };
 
 export default NearbyClinics;
+

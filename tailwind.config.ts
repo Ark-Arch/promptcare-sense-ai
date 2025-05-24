@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -55,16 +56,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))',
-        // PromptCare specific palette
+        // PromptCare specific palette (moved to top level)
         'promptcare-primary': 'hsl(var(--promptcare-primary))',
         'promptcare-primary-foreground': 'hsl(var(--promptcare-primary-foreground))',
         'promptcare-urgent': 'hsl(var(--promptcare-urgent))',
@@ -73,8 +65,18 @@ export default {
         'promptcare-soon-foreground': 'hsl(var(--promptcare-soon-foreground))',
         'promptcare-monitor': 'hsl(var(--promptcare-monitor))',
         'promptcare-monitor-foreground': 'hsl(var(--promptcare-monitor-foreground))',
-        'promptcare-surface': 'hsl(var(--promptcare-surface))', // For cards and distinct sections
-        'promptcare-subtle-bg': 'hsl(var(--promptcare-subtle-bg))', // Very light bg for main page
+        'promptcare-surface': 'hsl(var(--promptcare-surface))', 
+        'promptcare-subtle-bg': 'hsl(var(--promptcare-subtle-bg))',
+				sidebar: { // Sidebar specific colors remain here
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))',
+        // Removed PromptCare specific palette from here as it's moved above
 				},
 			},
 			borderRadius: {
@@ -118,3 +120,4 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
